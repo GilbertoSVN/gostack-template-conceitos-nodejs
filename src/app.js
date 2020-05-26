@@ -43,7 +43,7 @@ app.put('/repositories/:id', (request, response) => {
 
   const repoIndex = repositories.findIndex((repo) => repo.id === id);
 
-  if (repoIndex <= 0) {
+  if (repoIndex < 0) {
     return response.status(400).json({ error: 'Bad request' });
   }
 
@@ -59,7 +59,7 @@ app.delete('/repositories/:id', (request, response) => {
 
   const repoIndex = repositories.findIndex((repo) => repo.id === id);
 
-  if (repoIndex <= 0) {
+  if (repoIndex < 0) {
     return response.status(400).json({ error: 'Bad request ' });
   }
 
@@ -73,7 +73,7 @@ app.post('/repositories/:id/like', (request, response) => {
 
   const repoIndex = repositories.findIndex((repo) => repo.id === id);
 
-  if (repoIndex <= 0) {
+  if (repoIndex < 0) {
     return response.status(400).json({ error: 'Bad request ' });
   }
 
